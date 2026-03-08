@@ -1,53 +1,44 @@
+/* Reset some defaults */
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+    color: #333;
 }
 
+/* Header */
 header {
     background-color: #333;
     color: white;
-    padding: 15px;
+    padding: 20px 0;
+    text-align: center;
 }
 
+/* Navigation */
 nav {
     background-color: #555;
-    padding: 10px;
+    padding: 10px 0;
+    text-align: center;
 }
-
 nav a {
     color: white;
+    margin: 0 15px;
     text-decoration: none;
-    margin: 10px;
 }
-
 nav a:hover {
-    color: yellow;
+    text-decoration: underline;
 }
 
+/* Sections */
 section {
-    padding: 20px;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: green;
-}
-
+/* Footer */
 footer {
     background-color: #333;
     color: white;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    padding: 20px;
+    text-align: center;
 }
