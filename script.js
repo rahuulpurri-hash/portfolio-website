@@ -1,25 +1,14 @@
-// Highlight current page in nav
-document.addEventListener("DOMContentLoaded", () => {
-    const links = document.querySelectorAll("nav a");
-    const currentPage = window.location.pathname.split("/").pop();
+const animatedElements = document.querySelectorAll('.animate');
 
-    links.forEach(link => {
-        if(link.getAttribute("href") === currentPage || (currentPage === "" && link.getAttribute("href") === "index.html")) {
-            link.classList.add("active");
+function showOnScroll() {
+    animatedElements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (elementTop < windowHeight - 100) {
+            el.classList.add('show');
         }
     });
+}
 
-    // Optional: fade-in sections when in viewport
-    const sections = document.querySelectorAll(".section");
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-            }
-        });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => observer.observe(section));
-});
+window.addEventListener('scroll', showOnScroll);
+window.addEventListener('load', showOnScroll);
